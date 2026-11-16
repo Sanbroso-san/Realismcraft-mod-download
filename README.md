@@ -1,2 +1,2 @@
 # Realismcraft-mod-download
-a mod that made for my friend to donload
+a mod that made for to play with my friend
