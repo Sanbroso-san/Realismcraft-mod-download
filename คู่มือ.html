@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คู่มือrealism creative craft</title>
+  <!-- นำเข้าฟอนต์ภาษาไทยสวยๆ (Prompt) จาก Google Fonts -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Prompt', 'Segoe UI', sans-serif;
+      color: #ffffff;
+      background-color: #070714;
+      /* พื้นหลังสไตล์อวกาศ Cosmic + ดวงดาว */
+      background-image: 
+        radial-gradient(circle at 20% 25%, rgba(88, 28, 135, 0.45) 0%, transparent 45%),
+        radial-gradient(circle at 80% 70%, rgba(14, 165, 233, 0.3) 0%, transparent 50%),
+        radial-gradient(2px 2px at 40px 60px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 150px 120px, #e0e7ff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 260px 40px, #c084fc, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 340px 180px, #38bdf8, rgba(0,0,0,0));
+      background-size: 100% 100%, 100% 100%, 400px 400px, 400px 400px, 400px 400px, 400px 400px;
+      background-attachment: fixed;
+      line-height: 1.6;
+    }
+
+    /* ส่วนหัวเว็บไซต์ (Header) */
+    header {
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #e0e7ff, #c084fc, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(192, 132, 252, 0.3);
+    }
+
+    .subtitle {
+      color: #cbd5e1;
+      max-width: 650px;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    /* ส่วนแกลเลอรี 9 ช่อง (Gallery Section) */
+    .gallery-section {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 20px 90px;
+    }
+
+    .gallery-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 36px;
+      color: #e2e8f0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    /* ปรับให้แสดงผลพอดีบนแท็บเล็ตและมือถือ */
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: rgba(18, 20, 44, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #38bdf8;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background-color: #161836;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #f8fafc;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #94a3b8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #64748b;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ส่วนหัว ไม่มีปุ่มดาวน์โหลด -->
+  <header>
+    <h1>คู่มือrealism creative craft</h1>
+    <p class="subtitle">รวมขั้นตอนการติดตั้ง วิธีใช้งาน และเทคนิคการตั้งค่าทั้งหมดแบบเข้าใจง่าย</p>
+  </header>
+
+  <!-- ส่วนแกลเลอรี 9 รายการ -->
+  <main class="gallery-section">
+    <h2 class="gallery-title">ขั้นตอนและวิธีการใช้งาน</h2>
+    
+    <div class="gallery-grid">
+      <!-- ช่องที่ 1 -->
+      <div class="card">
+        <img src="https://placehold.co" alt="ขั้นตอนที่ 1">
+        <div class="card-content">
+          <h3>1. การเตรียมไฟล์และติดตั้ง</h3>
+          <p>คำอธิบายสั้นๆ เกี่ยวกับการนำไฟล์เข้าสู่ตัวเกมและการเปิดใช้งานเบื้องต้น</p>
+        </div>
+      </div>
+
+      <!-- ช่องที่ 2 -->
+      <div class="card">
+        <img src="https://placehold.co" alt="ขั้นตอนที่ 2">
+        <div class="card-content">
+          <h3>2. การเปิดใช้งาน Resource Pack</h3>
+          <p>วิธีเลือกและจัดลำดับแพ็กเสริมในหน้าตั้งค่าเพื่อให้แสดงผลได้อย่างถูกต้อง</p>
+        </div>
+      </div>
+
+      <!-- ช่องที่ 3 -->
+      <div class="card">
+        <img src="https://placehold.co" alt="ขั้นตอนที่ 3">
+        <div class="card-content">
+          <h3>3. การตั้งค่าแสงและเงา</h3>
+          <p>แนะนำการปรับความสว่างและกราฟิกเพื่อให้ได้บรรยากาศสมจริงที่สุด</p>
+        </div>
+      </div>
+
+      <!-- ช่องที่ 4 -->
+      <div class="card">
+        <img src="https://placehold.co" alt="ขั้นตอนที่ 4">
+        <div class="card-content">
+          <h3>4. ระบบบล็อกและพื้นผิวพิเศษ</h3>
+          <p>รายละเอียดของบล็อกตกแต่งใหม่และการเปลี่ยนพื้นผิวในโหมดสร้างสรรค์</p>
+        </div>
+      </div>
+
+      <!-- ช่องที่ 5 -->
+      <div class="card">
+        <img src="https://placehold.co" alt="ขั้นตอนที่ 5">
+        <div class="card-content">
+          <h3>5. การใช้งานไอเทมเสริม</h3>
+          <p>วิธีเรียกใช้และควบคุมไอเทมพิเศษต่างๆ ที่มีให้ในแพ็กนี้</p>
+        </div>
+      </div>
+
+      <!-- ช่องที่ 6 -->
+      <div class="card">
+        <img src="https://placehold.co" alt="ขั้นตอนที่ 6">
+        <div class="card-content">
+          <h3>6. การปรับแต่งท้องฟ้าและบรรยากาศ</h3>
+          <p>วิธีเปลี่ยนสีท้องฟ้า ดวงดาว และเอฟเฟกต์หมอกในฉาก</p>
+        </div>
+      </div>
+
+      <!-- ช่องที่ 7 -->
+      <div class="card">
+        <img src="https://placehold.co" alt="ขั้นตอนที่ 7">
+        <div class="card-content">
+          <h3>7. เทคนิคการสร้างสิ่งปลูกสร้าง</h3>
+          <p>แนวทางการจับคู่บล็อกและจัดแสงเพื่อให้งานสร้างดูมีมิติ</p>
+        </div>
+      </div>
+
+      <!-- ช่องที่ 8 -->
+      <div class="card">
+        <img src="https://placehold.co" alt="ขั้นตอนที่ 8">
+        <div class="card-content">
+          <h3>8. การปรับประสิทธิภาพ (FPS)</h3>
+          <p>วิธีตั้งค่าให้เล่นได้ลื่นไหลไม่กระตุกบนอุปกรณ์สเปกต่างๆ</p>
+        </div>
+      </div>
+
+      <!-- ช่องที่ 9 -->
+      <div class="card">
+        <img src="https://placehold.co" alt="ขั้นตอนที่ 9">
+        <div class="card-content">
+          <h3>9. การแก้ไขปัญหาที่พบบ่อย</h3>
+          <p>วิธีแก้เบื้องต้นหากภาพไม่โหลด แสงเพี้ยน หรือเกิดข้อผิดพลาด</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 คู่มือrealism creative craft</p>
+  </footer>
+
+</body>
+</html>
